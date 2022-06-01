@@ -1,0 +1,51 @@
+extends ../index
+
+block content
+    main(class="mb-2")
+        div(class="bg-light p-3")
+            h2="Bienvenido - Carga tus productos"
+            div
+                div(class="form-group")
+                    label(for="titulo")="Titulo"
+                    input(id="inputTitulo" type="text" class="form-control" name="titulo")
+                div(class="form-group")
+                    label(for="precio")="Precio"
+                    input(id="inputPrecio" type="number" class="form-control" name="precio")
+                div(class="form-group mb-3")
+                    label(for="imagen")="URL de imagen"
+                    input(id="inputImagen" type="text" class="form-control" name="imagen")
+                div
+                    button(id="enviarProducto" type="submit" class="btn btn-primary")="Cargar"
+    
+    main(class="mb-2")
+        div(class="bg-light p-3")
+            h2="Lista de productos"
+            table(class="table")
+                thead
+                    tr
+                        th(scope="col")="#"
+                        th(scope="col")="Titulo"
+                        th(scope="col")="Precio"
+                        th(scope="col")="Imagen"
+                tbody(id="contenedorProductos")
+
+    main(class="mb-2")
+        div(class="bg-light p-3")
+            h2="Centro de Mensajes"
+            form(method="POST" action="/")
+                div(class="form-group mb-3")
+                        label(for="email")="Ingrese tu Email"
+                        input(type="email" class="form-control" name="email")
+                div
+                    button(type="submit" class="btn btn-primary")="Registrate"
+            div
+                p(id="notificacion")
+                br
+                p(id="notificacionGeneral")
+            div(class="form-group mb-3")
+                input(id="inputMensaje" type="text" class="form-control" placeholder="Escribi tu mensaje...")
+                div
+                    button(id="enviarMensaje" class="btn btn-primary")="Enviar mensaje"
+            div(class="form-group mb-3")
+                ul(id="contenedorMensajes")
+                    
